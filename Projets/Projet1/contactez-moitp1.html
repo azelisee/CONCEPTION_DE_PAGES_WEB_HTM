@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>contactez-moitp1</title>
+</head>
+
+<body bgcolor="#FFCC99">
+<h1><center><font color="#6600CC">CONTACTEZ-MOI</font></center></h1>
+<hr width="400px" align="center"/>
+
+<form action="merci.html" method="post">
+<table border="0" width="600px" align="center">
+<tr>
+<td><font size="5">Nom de la Compagnie:</font></td>
+<td><input type="text" name="txtNom" id="txtNom"/></td>
+</tr>
+
+<tr>
+<td><font size="5">Siège de la Compagnie:</font></td>
+<td>
+<select name="cboContinents" id="cboContinents" size="1" width="100%">
+<option>Choisir un Continent</option>
+<option value="Africain">Afrique</option>
+<option value="Europeen" selected="selected">Europe</option>
+<option value="Yankee">Amerique</option>
+<option value="Asiatique">Asie</option>
+<option value="Océanien">Océanie</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td><font size="5">Adresse précise dans le continent:</font></td>
+<td><input type="text" name="txtNom" id="txtNom"/></td>
+</tr>
+
+<tr>
+<td valign="top"><font size="5">Langues parlées au sein de la compagnie:</font></td>
+<td><input type="checkbox" name="chkFrançais"/><font size="3">Français</font>
+<br/> 
+<input type="checkbox" name="chkAnglais"/><font size="3">Anglais</font> 
+<br/> 
+<input type="checkbox" name="chkEspagnol"/><font size="3">Espagnol</font>
+<br/>
+<input type="checkbox" name="chkAllemand"/><font size="3">Allemand</font>
+</td>
+</tr>
+
+<tr>
+<td><font size="5">Date d'entrée dans la compagnie:</font></td>
+<td><input type="date" id="start" name="trip-start" value="2021-10-23" min="2021-11-01" max="3000-01-01"/></td>
+</tr>
+
+<tr>
+<td><font size="5">Salaire annuel payé par la compagnie:</font></td>
+<td><input type="Number" name="txtNumber" id="txtNumber"/><span class="currencyinput"> <font size="4">$</font></span></td>
+</tr>
+
+<tr>
+<td><font size="5">Salaire mensuel payé par la compagnie:</font></td>
+<td><input type="Number" name="txtNumber" id="txtNumber"/><span class="currencyinput"> <font size="4">$</font></span></td>
+</tr>
+
+<tr>
+<td><font size="5">Taux horaire de la compagnie:</font></td>
+<td><input type="Number" name="txtNumber" id="txtNumber"/><span class="currencyinput"> <font size="4">$</font></span></td>
+</tr>
+
+<tr>
+<td><font size="5">Prime mensuelle:</font></td>
+<td><input type="Number" name="txtNumber" id="txtNumber"/><span class="currencyinput"> <font size="4">$</font></span></td>
+</tr>
+
+<tr>
+<td><font size="5">Adresse Email:</font></td>
+<td><input type="Email" name="txtEmail" id="txtEmail"/></td>
+</tr>
+
+<tr>
+<td><font size="5">Mot de Passe:</font></td>
+<td><input type="password" name="txtMot2passe" id="txtMot2passe"/></td>
+</tr>
+
+<tr>
+<td valign="top"><font size="5">Entrez votre numéro de téléphone:</font></td>
+<td>
+<input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required/><br/><small><font size="3">Format: 123-456-7890</font></small>
+</td>
+</tr>
+
+<tr>
+<td valign="top" ><font size="5">Vos Commentaires:</font></td>
+<td>
+<textarea name="txtCommentaire" id="txtCommentaire" rows="3" cols="20"></textarea>
+</td>
+</tr>
+
+<tr>
+<td><input type="submit" name="btnEnvoyer" value="Envoyer"/></td>
+<td><input type="reset" name="btnEffacer" value="Recommencer"/></td>
+</tr>
+</table>
+</form>
+
+
+
+
+</body>
+</html>
