@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>RÉSERVATION EN LIGNE</title>
+<link rel="stylesheet" href="cssrestaurant_pf.css"/>
+<style type="text/css">
+#para{
+	text-align:left;
+}
+
+#table-formulaire{
+	width:400px;
+	text-align:left;
+}
+
+#tr-formulaire{
+	width:100%;
+}
+
+#v-commentaire{
+	vertical-align:top;
+}
+#tr1-formulaire{
+	text-align:center;
+}
+
+.button{
+	border-color:black;
+	font-family:"Times New Roman";
+    text-align:left;
+    color:white;
+    padding:16px 32px;
+    transition-duration:0.4s;
+    cursor: pointer;
+    margin: 10px 5px;
+    text-decoration:none;
+    display:inline-block;
+    outline:none;
+}
+
+.button-res {
+  background-color:white;
+  font-family:"Times New Roman";
+  color:black;
+  border: 2px solid black;
+  border-radius:7px;
+  font-size:medium;
+  width:155px;
+  height:30px;
+}
+
+.button-res:hover {
+  background-color:green;
+  color:black;
+}
+
+.button-res:active {
+  background-color:#3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+	
+.parReservation{
+	color:green;
+    font-size:x-large;
+    width:140px;
+    height:30px;
+    background-color:white;
+    text-align:center;
+    font-weight:bold
+}
+
+.cbo{
+	font-family:"Times New Roman";
+}
+
+
+</style>
+</head>
+
+<script type="text/javascript">
+function Payer()        
+        {
+            document.getElementById("parRes").innerHTML = document.getElementById("cboCouverts").value;
+         }
+</script>
+ 
+
+
+
+
+<body>
+<table class="tabledesliens" align="center">
+<tr>
+<td>
+<button class="button-liens"><a href="acceuil_pf.html" name="cadre-change" target="cadre-change">Acceuil</a></button>
+<button class="button-liens"><a href="platsprincipaux_pf.html" name="cadre-platsprincipaux" target="cadre-change">Plats Principaux</a></button>
+<button class="button-liens"><a href="desserts_pf.html" name="cadre-desserts" target="cadre-change">Desserts</a></button>
+<button class="button-liens"><a href="boissons_pf.html" name="cadre-boissons" target="cadre-change">Boissons</a></button>
+<button class="button-liens"><a href="commandeenligne_pf.html" name="cadre-commandeenligne" target="cadre-change">Commander</a></button>
+<button class="button-liens"><a href="entrees_pf.html">Entrées</a></button>
+<button class="button-liens"><a href="menuenpdf_pf.html" name="menuenpdf" target="cadre-change">Menu en PDF</a></button>
+</td>
+</tr>
+</table>
+
+<h1>ESPACE RÉSERVATION:</h1>
+<table align="center">
+<tr>
+<td colspan="5">
+<p id="para"> 
+Les tables sont disponibles pour une durée de 2 heures. (sauf groupes en formule).<br/> 
+Au delà de 15 minutes de retard, votre table ne pourra plus être garantie.<br/>
+Le prix d'un couvert est de 30$.
+</p>
+</td>
+</tr>
+<tr>
+<td><div class="resrvation"><img src="images/i-réservation1.jpg" /></div></td>
+<td><br/><br/></td>
+<td><div class="resrvation"><img src="images/i-réservation2.jpg" /></div></td>
+<td><br/><br/></td>
+<td><div class="resrvation"><img src="images/i-réservation3.jpg" /></div></td>
+</tr>
+<tr>
+</tr>
+</table>
+
+<form action="mailto:azoumaelisee98@gmail.com" method="get">
+<table align="center" id="table-formulaire">
+<tr id="tr1-formulaire">
+<td colspan="2">
+<h2>FORMULAIRE:</h2>
+</td>
+</tr>
+<tr>
+<td>NOMBRE DE COUVERTS:</td>
+<td>
+<select name="cboCouverts" id="cboCouverts" size="1" class="cbo">
+<option value="30$">1 Couvert</option>
+<option value="60$">2 Couverts</option>
+<option value="90$">3 Couverts</option>
+<option value="120$">4 Couverts</option>
+<option value="150$">5 Couverts</option>
+<option value="180$">6 Couverts</option>
+<option value="210$">7 Couverts</option>
+<option value="240$">8 Couverts</option>
+<option value="270$">9 Couverts</option>
+<option value="300$">10 Couverts</option>
+<option value="Plus de 300$">Plus</option>
+</select>
+</td>
+</tr>
+<tr><br/></tr>
+
+<tr><br/></tr>
+<tr>
+<td>DATE DE RÉSERVATION:</td>
+<td>
+<input type="date" id="d-réservation" name="d-réservation" value="2021-12-18" min="2014-12-18" max="2039-12-18"/>
+</td>
+</tr>
+<tr>
+<td>HEURE:</td>
+<td><input type="time" id="h-reservation" name="h-reservation" min="00:00" max="23:59" required/></td>
+</tr>
+
+<tr id="tr-formulaire">
+<td>
+<input type="submit" name="btnPrixàpayer" value="PRIX À PAYER"  class="button-res" onclick="Payer()"/>
+</td>
+<td colspan="2">
+<p id="parRes" class="parReservation"></p>
+</td>
+</tr>
+<tr><br/></tr>
+<tr><br/></tr>
+<tr>
+<td id="v-commentaire">VOS COMMENTAIRES:</td>
+<td>
+<textarea name="txtCommentaire" id="txtCommentaire" rows="2" cols="20"></textarea>
+</td>
+</tr>
+<tr><br/><br/></tr>
+<tr>
+<td><input type="submit" name="btnRéserver" value="RÉSERVER"  class="button-res" onclick="reserver()"/></td>
+<td><input type="reset" name="btnAnnuler" value="ANNULER"  class="button-res"/></td>
+</tr>
+
+
+</table>
+</form>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>COMMANDER EN LIGNE</title>
+<link rel="stylesheet" href="cssrestaurant_pf.css"/>
+
+<style type="text/css">
+#table-commande{
+	width:700px;
+	height:500px;
+}
+
+.text-align{
+	text-align:left;
+}
+
+#valigncommentaire{
+	vertical-align:top;
+}
+#td-numero{
+	vertical-align:top;
+}
+
+#td-lang{
+	vertical-align:top;
+}
+
+.button{
+	border-color:black;
+	font-family:"Times New Roman";
+    text-align:left;
+    color:white;
+    padding:16px 32px;
+    transition-duration:0.4s;
+    cursor: pointer;
+    margin: 10px 5px;
+    text-decoration:none;
+    display:inline-block;
+    outline:none;
+}
+
+.button-cmd {
+  background-color:white;
+  font-family:"Times New Roman";
+  color:black;
+  border: 2px solid black;
+  border-radius:7px;
+  font-size:medium;
+  width:155px;
+  height:30px;
+}
+
+.button-cmd:hover {
+  background-color:green;
+  color:black;
+}
+
+.button-cmd:active {
+  background-color:#3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.p-facturation{
+    color:green;
+    font-size:x-large;
+    width:140px;
+    height:30px;
+    background-color:white;
+    text-align:center;
+    font-weight:bold;
+    vertical-align:middle;
+}
+
+.p-facturationtotale{
+    color:green;
+    font-size:x-large;
+    width:140px;
+    height:50px;
+    background-color:white;
+    text-align:center;
+    font-weight:bold;
+    vertical-align:middle;
+
+}
+
+.cbo{
+	font-family:"Times New Roman";
+}
+</style>
+ 
+
+<script type="text/javascript">
+    function calculer()
+        {
+    document.getElementById("txtEntrées").innerHTML = document.getElementById("cboEntrées").value;
+           
+    }
+
+    function comtabiliser()
+    {
+        document.getElementById("txtPlats").innerHTML = document.getElementById("cboPlatsprincipaux").value;
+
+    }
+
+    function payer()
+    {
+        document.getElementById("txtDesserts").innerHTML = document.getElementById("cboDesserts").value;
+
+    }
+
+    function regler() {
+        document.getElementById("txtBoissons").innerHTML = document.getElementById("cboBoissons").value;
+
+    }
+    function facturer()
+    {
+        var P1 = document.getElementById("txtEntrées").innerHTML;
+        var P2 = document.getElementById("txtPlats").innerHTML;
+        var P3 = document.getElementById("txtDesserts").innerHTML;
+        var P4 = document.getElementById("txtBoissons").innerHTML;
+        
+        var PT =  document.getElementById("txtEntrées").innerHTML + document.getElementById("txtPlats").innerHTML + 
+        document.getElementById("txtDesserts").innerHTML + document.getElementById("txtBoissons").innerHTML         
+        
+        document.getElementById("txtFacture").innerHTML = PT;
+    }
+</script>
+</head>
+
+
+<body>
+<table class="tabledesliens" align="center">
+<tr>
+<td>
+<button class="button-liens"><a href="acceuil_pf.html" name="cadre-change" target="cadre-change">Acceuil</a></button>
+<button class="button-liens"><a href="platsprincipaux_pf.html" name="cadre-platsprincipaux" target="cadre-change">Plats Principaux</a></button>
+<button class="button-liens"><a href="desserts_pf.html" name="cadre-desserts" target="cadre-change">Desserts</a></button>
+<button class="button-liens"><a href="boissons_pf.html" name="cadre-boissons" target="cadre-change">Boissons</a></button>
+<button class="button-liens"><a href="entrees_pf.html">Entrées</a></button>
+<button class="button-liens"><a href="reservationenligne_pf.html" name="cadre-reservationenligne" target="cadre-change">Réserver</a></button>
+<button class="button-liens"><a href="menuenpdf_pf.html" name="menuenpdf" target="cadre-change">Menu en PDF</a></button>
+</td>
+</tr>
+</table>
+
+<h1>PASSEZ VOTRE COMMANDE SANS PLUS ATTENDRE !!!</h1>
+<br/>
+<form action="indexrestaurant.html" method="post">
+<table id="table-commande" align="center">
+<tr>
+<td class="text-align">NOM COMPLET DU CLIENT:</td>
+<td class="text-align"><input type="text" name="txtNom" id="txtNom"/></td>
+</tr>
+
+<tr>
+<td class="text-align">ADRESSE DU CLIENT:</td>
+<td class="text-align"><input type="text" name="txtNom" id="txtNom"/></td>
+</tr>
+<tr>
+<td class="text-align" id="td-numero">NUMÉRO DE TÉLÉPHONE:</td>
+<td class="text-align">
+<input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required/><small>Format: 123-456-7890</small>
+</td>
+</tr>
+<tr>
+<td class="text-align">VOTRE ADRESSE E-MAIL:</td>
+<td class="text-align"><input type="Email" name="txtEmail" id="txtEmail"/></td>
+</tr>
+
+<tr>
+<td class="text-align">MOT DE PASSE:</td>
+<td class="text-align"><input type="password" name="txtMot2passe" id="txtMot2passe"/></td>
+</tr>
+
+<tr><td><br/></td></tr>
+<tr>
+<td class="text-align" id="td-lang">LANGUE(S) PARLÉE(S):</td>
+<td class="text-align">
+<input type="checkbox" name="chkFrançais" value="Français"/>FRANÇAIS
+<br/> 
+<input type="checkbox" name="chkAnglais" value="Anglais"/>ANGLAIS
+<br/> 
+<input type="checkbox" name="chkEspagnol" value="Espagnol"/>ESPAGNOL
+<br/>
+<input type="checkbox" name="chkAllemand" value="Allemand"/>ALLEMAND
+</td>
+</tr>
+<tr><td><br/></td></tr>
+<tr>
+<td class="text-align">ENTRÉES:</td>
+<td class="text-align">
+<select name="cboEntrées" id="cboEntrées " size="1" class="cbo">
+<option value="99.98$">SALADE TIÈDE DE FOIES DE VOLAILLES AU VINAIGRE FRAMBOISE </option>
+<option value="55$">SALADE D'AVOCATS AUX CREVETTES </option>
+<option value="45.98$">SALADE VERTE </option>
+<option value="90.25$">SALADE NIÇOISE </option>
+<option value="56.45$">SALADE DE SPAGHETTI </option>
+</select>
+</td>
+</tr>
+<tr>
+<td class="text-align">
+<input type="submit" name="btnPrixàpayer" value="PAYER ENTRÉES"  class="button-cmd" onclick="calculer()"/>
+</td>
+<td class="text-align"><p class="p-facturation" id="txtEntrées"></p></td>
+</tr>
+
+<tr>
+<td class="text-align">PLATS PRINCIPAUX:</td>
+<td class="text-align">
+<select name="cboPlatsprincipaux" id="cboPlatsprincipaux" size="1" class="cbo">
+<option value="50$">AKOUMÉ </option>
+<option value="70$">AYIMOLU </option>
+<option value="100$">FOUFOU </option>
+<option value="85.50$"> PINON </option>
+<option value="90.99$">ABLO </option>
+</select>
+</td>
+</tr>
+<tr >
+<td class="text-align">
+<input type="submit" name="btnPrixàpayer" value="PAYER PLATS" class="button-cmd" onclick="comptabiliser()" />
+</td>
+<td class="text-align"><p class="p-facturation" id="txtPlats"></p></td>
+</tr>
+
+<tr>
+<td class="text-align">DESSERTS:</td>
+<td class="text-align">
+<select name="cboDesserts" id="cboDesserts" size="1" class="cbo">
+<option value="12.98$">PLANTAINS FRITS RAPÉS (AHAYOE) </option>
+<option value="8.95$">BEIGNETS (BOTOKOIN)  </option>
+<option value="5.98$">BEIGNETS DE CORNILLES (GAOU) </option>
+<option value="6.35$">CARAMEL AUX ARACHIDES (NOUGATS) </option>
+<option value="9.50$">BATÔNNETS DE SEMOULE DE MAIS SUCRÉS FRITS (KLUIKUI) </option>
+</select>
+</td>
+</tr>
+<tr >
+<td class="text-align">
+<input type="submit" name="btnPrixàpayer" value="PRIX DESSERTS" class="button-cmd" onclick="payer()" />
+</td>
+<td class="text-align"><p class="p-facturation" id="txtDesserts"></p></td>
+</tr>
+
+<tr>
+<td class="text-align">BOISSONS:</td>
+<td class="text-align">
+<select name="cboBoissons" id="cboBoissons" size="1" class="cbo">
+<option value="75$">PILS</option>
+<option value="15$">CHILL </option>
+<option value="65.98$">FLAG </option>
+<option value="12.50$">MALTA GUINNESS  </option>
+<option value="10$">YOUKI COCKTAIL DE FRUIT  </option>
+</select>
+</td>
+</tr>
+<tr>
+<td class="text-align">
+<input type="submit" name="btnPrixàpayer" value="PRIX BOISSONS"  class="button-cmd" onclick="regler()"/>
+</td>
+<td class="text-align"><p class="p-facturation" id="txtBoissons"></p></td>
+</tr>
+
+<tr>
+<td class="text-align">PRIX TOTAL À PAYER:</td>
+<td class="text-align"  rowspan="2"><p class="p-facturationtotale" id="txtFacture"></p></td>
+<tr><td class="text-align"><input type="button" id="btnevaluer" value="EVALUER" onclick="facturer()" class="button-cmd"/><br/></td></tr>
+</tr>
+<tr><td><br/></td></tr>
+<tr>
+<td class="text-align">DATE DE LIVRAISON:</td>
+<td class="text-align"><input type="date" id="start" name="trip-start" value="2021-12-18" min="2021-11-01" max="3000-01-01"/></td>
+</tr>
+
+<tr>
+<td class="text-align">VOS COMMENTAIRES:</td>
+<td class="text-align">
+<textarea name="txtCommentaire" id="txtCommentaire" rows="3" cols="20"></textarea>
+</td>
+</tr>
+
+<tr>
+<td class="text-align"><input type="submit" name="btnEnvoyer" value="COMMANDER"  class="button-cmd"/></td>
+<td class="text-align"><input type="reset" name="btnEffacer" value="RECOMMENCER"  class="button-cmd"/></td>
+</tr>
+</table>
+</form>
+ 
+<form action="mailto:azoumaelisee98@gmail.com" method="get">
+</form>
+</body>
+
+</html>
